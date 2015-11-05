@@ -12,18 +12,22 @@ var userSchema = new Schema({
 });
 
 userSchema.methods.comparePassword = function(attemptedPassword, cb) {
-  // takes in user-entered password and compares with
-  // previously stored pw in db, passes boolean to cb
+  // if (this.password === attemptedPassword) {
+  //   cb(true);
+  // } else {
+  //   cb(false);
+  // }
 };
 
 userSchema.methods.hashPassword = function() {
-  // use promise
-  // each time user document is created, call this
-  // set the user's pw to the hashed result
+  var cipher = Promise.promisify(bcrypt.hash);
+    return cipher(this.password, null, null).bind(this)
+      .then(function(hash) {
+        this.password = hash;
+      });
 };
 
 var User = mongoose.model('User', userSchema);
-
 
 module.exports = User;
 
