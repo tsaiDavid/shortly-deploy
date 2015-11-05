@@ -32,7 +32,8 @@
 </script>
 
 <script>
-  window.Templates = {};
+  // commenting below out, moving to inside our layout.ejs
+  // window.Templates = {};
   $('[type="text/x-handlebars-template"]').each(function(index, div){
     Templates[div.id] = Handlebars.compile(div.innerHTML);
   });
