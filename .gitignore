@@ -7,7 +7,7 @@ iisnode.yml
 # If using oauth - planning on throwing sensitive info here
 oauth.js
 
-db/*
+db
 node_modules
 public/dist
 
