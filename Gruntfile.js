@@ -112,7 +112,6 @@ module.exports = function(grunt) {
   ]);
 
   grunt.registerTask('build', [
-    // concat first --> jsHint --> run mocha tests --> uglify --> clean
     'concat', 'jshint', 'mochaTest', 'uglify'
   ]);
 
@@ -125,7 +124,8 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask('deploy', [
-      // add your production server task here
+    // clean?
+    'build'
   ]);
 
 
