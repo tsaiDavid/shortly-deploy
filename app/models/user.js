@@ -2,8 +2,7 @@ var bcrypt = require('bcrypt-nodejs');
 var Promise = require('bluebird');
 var mongoose = require('mongoose');
 
-var path = ('../../db/');
-var db = require(path + 'dbconfig.js');
+var db = require('../../dbconfig.js');
 var Schema = mongoose.Schema;
 
 var userSchema = new Schema({

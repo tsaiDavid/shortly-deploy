@@ -1,6 +1,4 @@
-var path = ('../../db/');
-
-var db = require(path + 'dbconfig.js');
+var db = require('../../dbconfig.js');
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
@@ -8,14 +6,14 @@ var linkSchema = new Schema({
   // only set url to 255 to mimic original config (sqlite3)
   url: { type: String, maxlength: 255 },
   base_url: String,
-  code: String, 
+  code: String,
   title: String,
   visits: Number,
   timestamps: Date,
 });
 
 linkSchema.methods.someFunction = function() {
-  
+
 };
 
 var Link = mongoose.model('Link', linkSchema);
