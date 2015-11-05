@@ -8,6 +8,8 @@ iisnode.yml
 oauth.js
 
 db
+db/*
+db/journal
 node_modules
 public/dist
 

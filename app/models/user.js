@@ -11,11 +11,15 @@ var userSchema = new Schema({
 });
 
 userSchema.methods.comparePassword = function(attemptedPassword, cb) {
-  // if (this.password === attemptedPassword) {
-  //   cb(true);
-  // } else {
-  //   cb(false);
-  // }
+  bcrypt.compare(attemptedPassword, this.password, function(err, res) {
+    if (err) {
+      cb(err);
+    } else if (res === true) {
+      cb(null, true);
+    } else {
+      cb(null, false);
+    }
+  })
 };
 
 userSchema.methods.hashPassword = function() {
@@ -29,29 +33,3 @@ userSchema.methods.hashPassword = function() {
 var User = mongoose.model('User', userSchema);
 
 module.exports = User;
-
-/*******************************************************/
-
-// Old Model
-
-// var User = db.Model.extend({
-//   tableName: 'users',
-//   hasTimestamps: true,
-//   initialize: function(){
-//     this.on('creating', this.hashPassword);
-//   },
-//   comparePassword: function(attemptedPassword, callback) {
-//     bcrypt.compare(attemptedPassword, this.get('password'), function(err, isMatch) {
-//       callback(isMatch);
-//     });
-//   },
-//   hashPassword: function(){
-//     var cipher = Promise.promisify(bcrypt.hash);
-//     return cipher(this.get('password'), null, null).bind(this)
-//       .then(function(hash) {
-//         this.set('password', hash);
-//       });
-//   }
-// });
-
-// module.exports = User;
