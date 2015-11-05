@@ -16,6 +16,10 @@ app.configure(function() {
   app.use(express.session());
 });
 
+app.get('/favicon.ico', function(req, res) {
+  res.status(404).send();
+})
+
 app.get('/', util.checkUser, handler.renderIndex);
 app.get('/create', util.checkUser, handler.renderIndex);
 
