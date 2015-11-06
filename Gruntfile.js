@@ -111,6 +111,11 @@ module.exports = function(grunt) {
     'mochaTest'
   ]);
 
+  // adding task for heroku to run automatically
+  grunt.registerTask('heroku', [
+    'concat', 'jshint', 'mochaTest', 'uglify'
+  ]);
+
   grunt.registerTask('build', [
     'concat', 'jshint', 'mochaTest', 'uglify'
   ]);
@@ -122,10 +127,5 @@ module.exports = function(grunt) {
       grunt.task.run([ 'server-dev' ]);
     }
   });
-  
-  // adding task for heroku to run automatically
-  grunt.registerTask('heroku', [
-    'build'
-  ]);
 
 };
