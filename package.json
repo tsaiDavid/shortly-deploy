@@ -32,7 +32,7 @@
     "request": "^2.34.0",
     "scripts": {
       "start": "node server.js",
-      "postinstall": "bower cache clean && bower install; echo postinstall time; ./node_modules/grunt-cli/bin/grunt deploy"
+      "postinstall": "bower cache clean && bower install; echo postinstall time; ./node_modules/grunt-cli/bin/grunt"
     }
   },
   "devDependencies": {
