@@ -1,7 +1,7 @@
 {
-  "name": "shortly-express",
+  "name": "shortest",
   "version": "0.0.1",
-  "description": "shortly using express",
+  "description": "shortest with express and mongodb",
   "main": "server.js",
   "repository": "",
   "license": "Proprietary",
@@ -29,7 +29,9 @@
     "mongodb-uri": "^0.9.7",
     "mongoose": "^3.8.36",
     "request": "^2.34.0",
-    "sqlite3": "~3.0.10"
+    "scripts": {
+      "postinstall": "echo postinstall time; ./node_modules/grunt-cli/bin/grunt Gruntfile.js"
+    },
   },
   "devDependencies": {
     "grunt-contrib-clean": "^0.6.0",
