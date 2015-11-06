@@ -7,7 +7,6 @@
   "license": "Proprietary",
   "private": true,
   "scripts": {
-    "postinstall": "grunt heroku",
     "start": "node server.js"
   },
   "engines": {
