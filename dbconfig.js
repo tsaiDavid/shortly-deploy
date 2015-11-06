@@ -1,6 +1,9 @@
 var mongoose = require('mongoose');
-//Connecting to azure for production?
-mongoose.connect('mongodb://localhost/shortlydb');
+
+var connectionString = process.env.CUSTOMCONNSTR_MONGOLAB_URI || 'mongodb://localhost/shortlydb';
+
+mongoose.connect(connectionString);
+
 var db = mongoose.connection;
 
 db.on('error', console.error.bind(console, 'connection error: '));

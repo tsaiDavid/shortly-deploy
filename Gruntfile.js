@@ -15,7 +15,6 @@ module.exports = function(grunt) {
         dest: 'public/dist/<%= pkg.name %>.js'
       }
     },
-
     mochaTest: {
       test: {
         options: {
@@ -86,6 +85,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
+  grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-mocha-test');
   grunt.loadNpmTasks('grunt-shell');
   grunt.loadNpmTasks('grunt-nodemon');
