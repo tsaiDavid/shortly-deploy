@@ -6,6 +6,13 @@
   "repository": "",
   "license": "Proprietary",
   "private": true,
+  "scripts": {
+    "start": "node server.js",
+    "postinstall": "bower cache clean && bower install;"
+  },
+  "engines": {
+    "node": "4.2.2"
+  },
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
     "bluebird": "1.0.8",
@@ -29,11 +36,7 @@
     "mocha": "^1.17.1",
     "mongodb-uri": "^0.9.7",
     "mongoose": "^3.8.36",
-    "request": "^2.34.0",
-    "scripts": {
-      "start": "node server.js",
-      "postinstall": "bower cache clean && bower install; echo postinstall time; ./node_modules/grunt-cli/bin/grunt"
-    }
+    "request": "^2.34.0"
   },
   "devDependencies": {
     "grunt-contrib-clean": "^0.6.0",

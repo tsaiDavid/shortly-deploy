@@ -123,11 +123,9 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.registerTask('deploy', [
-    // clean?
+  // adding task for heroku to run automatically
+  grunt.registerTask('heroku', [
     'build'
   ]);
-
-
 
 };
