@@ -122,7 +122,7 @@ module.exports = function(grunt) {
       grunt.task.run([ 'server-dev' ]);
     }
   });
-
+  
   // adding task for heroku to run automatically
   grunt.registerTask('heroku', [
     'build'
